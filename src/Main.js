@@ -33,8 +33,6 @@ const generateHoroscope = (_error, _response, body) => {
         , xs = removeElementsWithUndefinedTag (rawProphecyArray).slice (3). slice (0, -1).map (el => el.innerHTML)
         , prophecises = chunksOf (xs) (2)
     
-    console.log ("START++++++++++++++++++++++++++++++++")
-
     const todayRaw = new Date()
         , dd       = String(todayRaw.getDate()).padStart(2, '0')
         , mm       = String(todayRaw.getMonth() + 1).padStart(2, '0')

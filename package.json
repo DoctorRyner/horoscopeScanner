@@ -1,0 +1,23 @@
+{
+  "name": "horoscopescanner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/Main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoctorRyner/horoscopeScanner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoctorRyner/horoscopeScanner/issues"
+  },
+  "homepage": "https://github.com/DoctorRyner/horoscopeScanner#readme",
+  "dependencies": {
+    "jsdom": "^15.2.1",
+    "request": "^2.88.0"
+  }
+}
