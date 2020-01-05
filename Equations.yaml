@@ -1,0 +1,3 @@
+default: sae run
+
+run: clear && node src/Main.js
