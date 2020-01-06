@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/DoctorRyner/horoscopeScanner#readme",
   "dependencies": {
+    "fs": "0.0.1-security",
     "jsdom": "^15.2.1",
     "request": "^2.88.0"
   }
