@@ -39,7 +39,7 @@ You have to divide your code into pieces without any reason. Also, RamdaJS's nam
 
 Why `slice (1)` means remove the first element and `slice (0, -1)` the last? It's hard to google and find in documentation while we have `drop (1)` and `dropLast (1)` in RamdaJS
 
-Consider these as a real world examples based on this util's task:
+Consider these as real world examples based on this util's task:
 ```javascript
 // WITHOUT RAMDA ===================================================================================================
 const chunksOf = array => size => {
