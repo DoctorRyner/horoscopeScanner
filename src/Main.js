@@ -78,5 +78,9 @@ const horoschopeRequestHandler = (_error, _response, body) => {
     horoscope.saveTo ("test.txt")
 }
 
+const args       = R.take (2) (process.argv)
+    , link       = R.head (args)
+    , fileToSave = R.last (args)
+
 // Send HTTP request
 request ("https://www.stardm.com/daily-horoscopes/A1-daily-horoscopes.asp", horoschopeRequestHandler)
