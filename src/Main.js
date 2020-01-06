@@ -75,12 +75,16 @@ const horoschopeRequestHandler = (_error, _response, body) => {
 
     const horoscope = new Horoscope (today, horoscopeSignProphecies)
 
-    horoscope.saveTo ("test.txt")
+    if (fileName === undefined)
+        console.log (horoscope.toString ())
+    else
+        horoscope.saveTo (fileName)
 }
 
-const args       = R.take (2) (process.argv)
-    , link       = R.head (args)
-    , fileToSave = R.last (args)
+// Read arguments
+const args     = R.compose (R.take (2), R.drop (2)) (process.argv)
+    , link     = args[0]
+    , fileName = args[1]
 
 // Send HTTP request
-request ("https://www.stardm.com/daily-horoscopes/A1-daily-horoscopes.asp", horoschopeRequestHandler)
+request (link, horoschopeRequestHandler)
