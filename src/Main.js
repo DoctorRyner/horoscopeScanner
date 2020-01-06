@@ -19,13 +19,19 @@ class Horoscope {
         this.horoscopeSigns = horoscopeSigns
     }
 
+    // Form an output sting
     toString = () => "".concat (
         "DATE: ",
         this.date,
         "\n\n",
-        this.horoscopeSigns.map (sign => sign.name + "\n" + sign.prophecyContent + "\n\n").concat ()
+        R.compose (
+            R.dropLast (2),
+            strs => strs.join (""),
+            R.map (sign => sign.name + "\n" + sign.prophecyContent + "\n\n")
+        ) (this.horoscopeSigns)
     )
 
+    // Save output string to a file
     saveTo = fileName => {
         fs.writeFile (fileName, this.toString (), err => {
             if (err) throw err
