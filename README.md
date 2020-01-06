@@ -66,7 +66,7 @@ const rawProphecyArray = Array.from (doc.querySelector (".entry").childNodes)
 // WITH RAMDA ======================================================================================================
 const prophecySource = doc.querySelector (".entry").childNodes
 
-// ATTENTION! Compose reads right to left, or down to up
+// ATTENTION! Compose reads right to left or down to up
 const horoscopeSigns = R.compose (
     R.map (pair => new HoroscopeSignProphecy (pair[0], pair[1])),
     R.splitEvery (2),
