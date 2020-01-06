@@ -1,3 +1,5 @@
 default: sae run
 
-run: node src/Main.js
+runAndSaveToFile: node src/Main.js https://www.stardm.com/daily-horoscopes/AL1-daily-love-horoscopes.asp test.txt
+
+run: node src/Main.js https://www.stardm.com/daily-horoscopes/AL1-daily-love-horoscopes.asp
