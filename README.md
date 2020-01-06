@@ -21,7 +21,7 @@ And with `node src/Main.js https://www.stardm.com/daily-horoscopes/AL1-daily-lov
 
 JavaScript doesn't have chunksOf functin built in (a function that breaks down an array in chunks of n elements)
 
-Also JavaScript's object-oriented methods can't be composed with regular function, for example:
+Also JavaScript's object-oriented methods can't be composed with regular functions, for example:
 
 ```javascript
 const xs                 = [1, 2, 3, 4, 5]
@@ -64,7 +64,8 @@ const rawProphecyArray = Array.from (doc.querySelector (".entry").childNodes)
 // WITH RAMDA ======================================================================================================
 const prophecySource = doc.querySelector (".entry").childNodes
 
-const horoscopeSigns = R.compose ( // ATTANTION, compose reads right to left, or down to up
+// ATTENTION! Compose reads right to left, or down to up
+const horoscopeSigns = R.compose (
     R.map (pair => new HoroscopeSignProphecy (pair[0], pair[1])),
     R.splitEvery (2),
     R.init,
@@ -79,6 +80,6 @@ const horoscopeSigns = R.compose ( // ATTANTION, compose reads right to left, or
                             .replace (/\..+/, '')
    , horoscope = new Horoscope (today, horoscopeSigns)
 ```
-Not only JS doesn't have built in realisation of `chunksOf`, it requires as to devide our code on pieces without any reason, of course you can write it without deviding but in that case you will need to switch from left to right and vice versa chaining of functions in a one expression
+Not only JS doesn't have built in realisation of `chunksOf`, it requires us to devide our code on pieces without any reason, of course you can write it without deviding but in that case you will need to switch from left to right and vice versa chaining of functions in a one expression
 
 Also you can rewrite it in imperative way using loop statements and etc, that probably would perform better but would become absolutely unreadable
