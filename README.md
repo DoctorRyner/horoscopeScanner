@@ -19,7 +19,7 @@ And with `node src/Main.js https://www.stardm.com/daily-horoscopes/AL1-daily-lov
 
 ## Why use RamdaJS?
 
-JavaScript doesn't have chunksOf functin built in (a function that breaks down array in chunks of n elements)
+JavaScript doesn't have chunksOf functin built in (a function that breaks down an array in chunks of n elements)
 
 Also JavaScript's object-oriented methods can't be composed with regular function, for example:
 
@@ -31,11 +31,11 @@ const xs                 = [1, 2, 3, 4, 5]
 
 ```
 
-How to embed removeFirstAndLast between map and filter? `<object>.g (). f ()` chaining goes left to right, while `f (g (x))` goes right to left.
+How to embed `removeFirstAndLast` between map and filter? `<object>.g (). f ()` chaining goes left to right, while `f (g (x))` goes right to left.
 
 You have to devide your code in pieces without any reason. Also RamdaJS's naming just makes more sense
 
-Why `slice (1)` means remove first element and `slice (0, -1)`? It's hard to google and find in a documentation while we have `drop () and dropLast ()` in RamdaJS
+Why `slice (1)` means remove the first element and `slice (0, -1)` the last? It's hard to google and find in a documentation while we have `drop ()` and `dropLast ()` in RamdaJS
 
 Consider these as a real world examples based on this util's task:
 ```javascript
@@ -43,7 +43,7 @@ Consider these as a real world examples based on this util's task:
 const chunksOf = array => size => {
     if (!array) return []
 
-    const firstChunk = array.slice(0, size)
+    const firstChunk = array.slice (0, size)
 
     return !firstChunk.length
         ? array
@@ -64,7 +64,7 @@ const rawProphecyArray = Array.from (doc.querySelector (".entry").childNodes)
 // WITH RAMDA ======================================================================================================
 const prophecySource = doc.querySelector (".entry").childNodes
 
-const horoscopeSigns = R.compose (
+const horoscopeSigns = R.compose ( // ATTANTION, compose reads right to left, or down to up
     R.map (pair => new HoroscopeSignProphecy (pair[0], pair[1])),
     R.splitEvery (2),
     R.init,
