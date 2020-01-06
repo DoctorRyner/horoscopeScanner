@@ -19,6 +19,7 @@
   "dependencies": {
     "fs": "0.0.1-security",
     "jsdom": "^15.2.1",
+    "ramda": "^0.26.1",
     "request": "^2.88.0"
   }
 }

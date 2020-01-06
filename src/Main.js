@@ -2,6 +2,8 @@ const request = require ("request")
 const fs = require ("fs")
 const jsdom = require("jsdom")
 const { JSDOM } = jsdom
+const ramda = require ("ramda")
+const R = ramda
 
 class Horoscope {
     constructor (date, horoscopeSigns) {
@@ -32,22 +34,12 @@ class HoroscopeSignProphecy {
     }
 }
 
-const chunksOf = array => size => {
-    if (!array) return []
-
-    const firstChunk = array.slice(0, size)
-
-    return !firstChunk.length
-        ? array
-        : [firstChunk].concat (chunksOf (array.slice(size, array.length)) (size)) 
-}
-
 const generateHoroscope = (_error, _response, body) => {
     const doc = new JSDOM (body).window.document
         , removeElementsWithUndefinedTag = xs => xs.filter (el => el.tagName !== undefined)
         , rawProphecyArray = Array.from (doc.querySelector (".entry").childNodes)
         , xs = removeElementsWithUndefinedTag (rawProphecyArray).slice (3). slice (0, -1).map (el => el.innerHTML)
-        , prophecises = chunksOf (xs) (2)
+        , prophecises = R.splitEvery (2) (xs)
     
     const todayRaw = new Date()
         , dd       = String(todayRaw.getDate()).padStart(2, '0')
