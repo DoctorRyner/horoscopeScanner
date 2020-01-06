@@ -31,11 +31,13 @@ const xs                 = [1, 2, 3, 4, 5]
 
 ```
 
-How to embed `removeFirstAndLast` between map and filter? `<object>.g (). f ()` chaining goes left to right, while `f (g (x))` goes right to left.
+How to embed `removeFirstAndLast` between map and filter? `<object>.g (). f ()` chaining goes left to right
+<br>
+but `f (g (x))` goes right to left
 
 You have to divide your code into pieces without any reason. Also, RamdaJS's naming just makes more sense
 
-Why `slice (1)` means remove the first element and `slice (0, -1)` the last? It's hard to google and find in documentation while we have `drop ()` and `dropLast ()` in RamdaJS
+Why `slice (1)` means remove the first element and `slice (0, -1)` the last? It's hard to google and find in documentation while we have `drop (1)` and `dropLast (1)` in RamdaJS
 
 Consider these as a real world examples based on this util's task:
 ```javascript
