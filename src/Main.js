@@ -33,7 +33,7 @@ class Horoscope {
 
     // Save output string to a file
     saveTo = fileName => {
-        fs.writeFile (fileName, this.toString (), err => {
+        fs.appendFile (fileName, this.toString (), err => {
             if (err) throw err
 
             console.log (fileName + " saved!")
