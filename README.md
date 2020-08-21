@@ -82,6 +82,6 @@ const horoscopeSigns = R.compose (
                             .replace (/\..+/, '')
    , horoscope = new Horoscope (today, horoscopeSigns)
 ```
-Not only JS doesn't have a built-in realisation of `chunksOf`, it requires us to divide our code into pieces without any reason, of course, you can write it without dividing but in that case, you will need to switch from left to right and vice versa chaining of functions in a one expression
+Not only JS doesn't have a built-in implementation of `chunksOf` but it also requires us to divide our code into pieces without any reason, of course, you can write it without dividing but in that case, you will need to switch from left to right and vice versa chaining of functions in a one expression
 
 Also, you can rewrite it in an imperative way using loop statements and etc, that probably would perform better but would become absolutely unreadable
