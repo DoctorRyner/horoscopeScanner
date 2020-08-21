@@ -25,7 +25,7 @@ Also, JavaScript's object-oriented methods can't be composed with regular functi
 
 ```javascript
 const xs                 = [1, 2, 3, 4, 5]
-    , removeFirstAndLast = xs.slice (1).slice (0, -1)
+    , removeFirstAndLast = xs => xs.slice (1).slice (0, -1)
     , result             = xs.map (x => x * 2)
                              .filter (x => x > 5)
 
